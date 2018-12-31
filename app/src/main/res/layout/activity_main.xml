@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewFuelAmount"
+        android:layout_width="112dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/text_view_fuel_amount"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextFuelAmount"
+        app:layout_constraintStart_toEndOf="@+id/editTextFuelAmount"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFuelPrice" />
+
+    <Button
+        android:id="@+id/buttonTensUp"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/button_fuel_price_up_tens"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDigitsUp"
+        app:layout_constraintStart_toEndOf="@+id/textViewFuelPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
+
+    <Button
+        android:id="@+id/buttonTensDown"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/button_fuel_price_down_tens"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDigitsDown"
+        app:layout_constraintStart_toEndOf="@+id/textViewFuelAmount"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTensUp" />
+
+    <Button
+        android:id="@+id/buttonDigitsDown"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/button_fuel_price_down_digits"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDigitsUp" />
+
+    <Button
+        android:id="@+id/buttonDigitsUp"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/button_fuel_price_up_digits"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTensUp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEnterFillUpDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_enter_fuel_log"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDriver" />
+
+    <Button
+        android:id="@+id/buttonFuelLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/button_fuel_log"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnterFillUpDetails" />
+
+    <Button
+        android:id="@+id/buttonMaintenance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/button_maintenance"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFuelLog" />
+
+    <Button
+        android:id="@+id/buttonVehicles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/button_vehicles"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMaintenance" />
+
+    <Button
+        android:id="@+id/buttonDrivers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_drivers"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonVehicles" />
+
+    <TextView
+        android:id="@+id/textViewVehicle"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="335dp"
+        android:text="@string/text_view_vehicle"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotal" />
+
+    <TextView
+        android:id="@+id/textViewDriver"
+        android:layout_width="93dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/text_view_driver"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVehicle" />
+
+    <Button
+        android:id="@+id/buttonChangeVehicle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/button_vehicles"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotal" />
+
+    <Button
+        android:id="@+id/buttonChangeDriver"
+        android:layout_width="151dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_drivers"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewDriver"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChangeVehicle" />
+
+    <EditText
+        android:id="@+id/editTextOdometer"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="12dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="textEnd"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewFuelPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/editTextFuelPrice"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
+
+    <EditText
+        android:id="@+id/editTextFuelAmount"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFuelPrice" />
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="134dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="6dp"
+        android:digits="0123456789."
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewVehicle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFuelAmount" />
+
+    <TextView
+        android:id="@+id/textViewFuelPrice"
+        android:layout_width="114dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/text_view_fuel_price"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextFuelAmount"
+        app:layout_constraintStart_toEndOf="@+id/editTextFuelPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
+
+</android.support.constraint.ConstraintLayout>

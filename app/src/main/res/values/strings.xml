@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Car Logger</string>
+    <string name="button_enter_fuel_log">Enter Fill Up Details</string>
+    <string name="button_fuel_log">Fuel Log</string>
+    <string name="button_drivers">Drivers</string>
+    <string name="button_vehicles">Vehicles</string>
+    <string name="button_maintenance">Maintenance</string>
+    <string name="button_fuel_price_up_tens">/\\</string>
+    <string name="button_fuel_price_down_tens">\\/</string>
+    <string name="button_fuel_price_up_digits">/\\</string>
+    <string name="button_fuel_price_down_digits">\\/</string>
+    <string name="text_view_fuel_price">Fuel Price</string>
+    <string name="text_view_fuel_amount">Fuel Amount</string>
+    <string name="text_view_vehicle">Vehicle</string>
+    <string name="text_view_driver">Driver</string>
+</resources>
