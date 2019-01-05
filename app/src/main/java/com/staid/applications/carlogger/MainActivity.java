@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "logTag";
 
     EditText editTextOdometer;
-    Button buttonTensUp;
-    Button buttonTensDown;
-    Button buttonDigitsUp;
-    Button buttonDigitsDown;
+    ImageButton buttonTensUp;
+    ImageButton buttonTensDown;
+    ImageButton buttonDigitsUp;
+    ImageButton buttonDigitsDown;
     Button buttonChangeVehicle;
     Button buttonChangeDriver;
     Button buttonEnterFillUpDetails;
@@ -37,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, "Ran - " + TAG);
         //Set up inputs from GUI (activity_main)
         editTextOdometer = (EditText) findViewById(R.id.editTextOdometer);
-        buttonTensUp = (Button) findViewById(R.id.buttonTensUp);
-        buttonTensDown = (Button) findViewById(R.id.buttonTensDown);
-        buttonDigitsUp = (Button) findViewById(R.id.buttonDigitsUp);
-        buttonDigitsDown = (Button) findViewById(R.id.buttonDigitsDown);
+        buttonTensUp = (ImageButton) findViewById(R.id.buttonTensUp);
+        buttonTensDown = (ImageButton) findViewById(R.id.buttonTensDown);
+        buttonDigitsUp = (ImageButton) findViewById(R.id.buttonDigitsUp);
+        buttonDigitsDown = (ImageButton) findViewById(R.id.buttonDigitsDown);
         buttonChangeVehicle = (Button) findViewById(R.id.buttonChangeVehicle);
         buttonChangeDriver = (Button) findViewById(R.id.buttonChangeDriver);
         buttonEnterFillUpDetails = (Button) findViewById(R.id.buttonEnterFillUpDetails);
