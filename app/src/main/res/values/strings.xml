@@ -13,4 +13,8 @@
     <string name="text_view_fuel_amount">Fuel Amount</string>
     <string name="text_view_vehicle">Vehicle</string>
     <string name="text_view_driver">Driver</string>
+    <string name="DRIVER_TABLE">Driver</string>
+    <string name="VEHICLE_TABLE">Vehicle</string>
+    <string name="up_arrow">Up Arrow</string>
+    <string name="down_arrow">Down Arrow</string>
 </resources>

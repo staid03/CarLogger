@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/textViewFuelAmount"
         android:layout_width="112dp"
-        android:layout_height="0dp"
+        android:layout_height="29dp"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="8dp"
         android:layout_marginTop="7dp"
@@ -20,16 +20,52 @@
         app:layout_constraintStart_toEndOf="@+id/editTextFuelAmount"
         app:layout_constraintTop_toBottomOf="@+id/editTextFuelPrice" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonTensUp"
+        android:layout_width="44dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/up_arrow"
+        android:src="@drawable/uparrow"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
+
+    <ImageButton
+        android:id="@+id/downArrowTens"
+        android:contentDescription="@string/down_arrow"
+        android:src="@drawable/downarrow"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTensDown" />
+
+    <ImageButton
+        android:id="@+id/upArrowDigits"
+        android:contentDescription="@string/up_arrow"
+        android:src="@drawable/uparrow"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTensDown" />
+
+    <ImageButton
+        android:id="@+id/downArrowDigits"
+        android:layout_width="56dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="44dp"
+        android:contentDescription="@string/down_arrow"
+        android:src="@drawable/downarrow"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTensDown" />
+
+    <Button
+        android:id="@+id/buttonTensUpOld"
         android:layout_width="57dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="16dp"
         android:text="@string/button_fuel_price_up_tens"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonDigitsUp"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textViewFuelPrice"
         app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
 
@@ -59,13 +95,16 @@
 
     <Button
         android:id="@+id/buttonDigitsUp"
-        android:layout_width="57dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="456dp"
         android:text="@string/button_fuel_price_up_digits"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTensUp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextFuelPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
 
     <Button
         android:id="@+id/buttonEnterFillUpDetails"
@@ -173,14 +212,15 @@
     <EditText
         android:id="@+id/editTextOdometer"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="9dp"
         android:layout_marginBottom="12dp"
         android:digits="0123456789"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewFuelPrice"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDigitsUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -188,13 +228,15 @@
 
     <EditText
         android:id="@+id/editTextFuelPrice"
-        android:layout_width="132dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="206dp"
         android:digits="0123456789"
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDigitsUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextOdometer" />
 
