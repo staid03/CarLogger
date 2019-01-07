@@ -3,13 +3,32 @@ package com.staid.applications.carlogger;
 import android.util.Log;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoadInitialDefaults {
     final String TAG = "logTag";
+    DatabaseReference myRef;// = FirebaseDatabase.getInstance().getReference("Driver");
+    FirebaseFirestore db;
 
     public LoadInitialDefaults() {
         MakeDefaultDriver();
         MakeDefaultVehicle();
+        //FireStoreTest();
+    }
+
+    public void FireStoreTest(){
+        String NAME_KEY = "Name";
+        String EMAIL_KEY = "Email";
+        String PHONE_KEY = "Phone";
+
+        Map<String, Object> newContact = new HashMap<>();
+        newContact.put(NAME_KEY, "John");
+        newContact.put(EMAIL_KEY, "john@gmail.com");
+        newContact.put(PHONE_KEY, "080-0808-009");
+        db.collection("PhoneBook").document("Contacts").set(newContact);
     }
 
     public void MakeDefaultDriver() {
@@ -17,7 +36,8 @@ public class LoadInitialDefaults {
         Log.w(TAG, "Ran - " + randoString);
 
         //database access
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Driver");;
+        //DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Driver");
+        myRef = FirebaseDatabase.getInstance().getReference("Driver");
         String id = myRef.push().getKey();
         //driver
         final String DEFAULT_DRIVER_FIRST_NAME = "HEW";
@@ -25,7 +45,19 @@ public class LoadInitialDefaults {
         final String NICKNAME = "HEW";
         final String LICENCE_EXPIRY_DATE_STRING ="31/12/2019";
         Driver driver = new Driver(DEFAULT_DRIVER_FIRST_NAME,DEFAULT_DRIVER_LAST_NAME,NICKNAME,LICENCE_EXPIRY_DATE_STRING);
-        myRef.child(id).setValue(driver);
+        //myRef.child(id).setValue(driver);
+
+        db = FirebaseFirestore.getInstance();
+        String FIRST_NAME_KEY = "FirstName";
+        String LAST_NAME_KEY  = "LastName";
+        String NICKNAME_KEY = "Nickname";
+        String LICENCE_EXPIRY_DATE_KEY = "LicenceExpiryDate";
+        Map<String, Object> newDriver = new HashMap<>();
+        newDriver.put(FIRST_NAME_KEY, DEFAULT_DRIVER_FIRST_NAME);
+        newDriver.put(LAST_NAME_KEY, DEFAULT_DRIVER_LAST_NAME);
+        newDriver.put(NICKNAME_KEY, NICKNAME);
+        newDriver.put(LICENCE_EXPIRY_DATE_KEY, LICENCE_EXPIRY_DATE_STRING);
+        db.collection("Drivers").document("Details").set(newDriver);
         return;
     }
 
@@ -34,7 +66,8 @@ public class LoadInitialDefaults {
         Log.w(TAG, "Ran - " + randoString);
 
         //database access
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Vehicle");
+        //DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Vehicle");
+        myRef = FirebaseDatabase.getInstance().getReference("Vehicle");
         String id = myRef.push().getKey();
         //vehicle
         final String CAR_NAME = "AMY";

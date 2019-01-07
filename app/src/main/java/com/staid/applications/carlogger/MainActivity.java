@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "logTag";
 
+    //TODO CHANGE "ENTER FILL UP DETAILS TO SAVE FILL UP DETAILS
+    //TODO REMOVE BUTTONS FOR DRIVER AND VEHICLE
+
     EditText editTextOdometer;
     ImageButton buttonTensUp;
     ImageButton buttonTensDown;
@@ -54,44 +57,48 @@ public class MainActivity extends AppCompatActivity {
         buttonTensUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString());
-                OdometerReading += 10;
-                editTextOdometer.setText(Integer.toString(OdometerReading));
-                String thisButton = "buttonTensUp - " + OdometerReading;
-                outputlog(thisButton);
+                if (odometerReadingOK(editTextOdometer)){
+                    int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString())+10;
+                    editTextOdometer.setText(Integer.toString(OdometerReading));
+                    //String thisButton = "buttonTensUp - " + OdometerReading;
+                    //outputlog(thisButton);
+                }
             }
         });
 
         buttonTensDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString());
-                OdometerReading -= 10;
-                editTextOdometer.setText(Integer.toString(OdometerReading));
-                String thisButton = "buttonTensDown - " + OdometerReading;
-                outputlog(thisButton);
+                if (odometerReadingOK(editTextOdometer)){
+                    int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString())-10;
+                    editTextOdometer.setText(Integer.toString(OdometerReading));
+                    //String thisButton = "buttonTensDown - " + OdometerReading;
+                    //outputlog(thisButton);
+                }
             }
         });
 
         buttonDigitsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString());
-                OdometerReading += 1;
-                editTextOdometer.setText(Integer.toString(OdometerReading));
-                String thisButton = "buttonDigitsUp - " + OdometerReading;
-                outputlog(thisButton);
+                if (odometerReadingOK(editTextOdometer)){
+                    int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString())+1;
+                    editTextOdometer.setText(Integer.toString(OdometerReading));
+                    //String thisButton = "buttonDigitsUp - " + OdometerReading;
+                    //outputlog(thisButton);
+                }
             }
         });
 
         buttonDigitsDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString());
-                OdometerReading -= 1;
-                editTextOdometer.setText(Integer.toString(OdometerReading));
-                String thisButton = "buttonDigitsDown - " + OdometerReading;
-                outputlog(thisButton);
+                if (odometerReadingOK(editTextOdometer)){
+                    int OdometerReading = Integer.parseInt((editTextOdometer.getText()).toString())-1;
+                    editTextOdometer.setText(Integer.toString(OdometerReading));
+                    //String thisButton = "buttonDigitsDown - " + OdometerReading;
+                    //outputlog(thisButton);
+                }
             }
         });
 
@@ -150,6 +157,15 @@ public class MainActivity extends AppCompatActivity {
                 outputlog(thisButton);
             }
         });
+    }
+
+    public boolean odometerReadingOK(EditText editTextOdometer){
+        boolean checkValidOdometerReading = false;
+        if(!(editTextOdometer.getText().toString().isEmpty())) {
+            if ((Integer.parseInt((editTextOdometer.getText()).toString())) >= 0)
+                checkValidOdometerReading = true;
+            }
+        return checkValidOdometerReading;
     }
 
     public void enterFillUpDetails(){
